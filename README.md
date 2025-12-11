@@ -11,6 +11,7 @@
 sudo apt update
 sudo apt upgrade -y
 ```
+<img width="974" height="699" alt="image" src="https://github.com/user-attachments/assets/f6c860df-698d-4a8f-b409-6c92aa24d2e2" />
 
 ### Шаг 1.2: Установка Python и pip
 Ansible требует Python 3.9+:
@@ -22,6 +23,7 @@ sudo apt install -y python3 python3-pip python3-venv
 ```bash
 python3 --version
 ```
+<img width="974" height="625" alt="image" src="https://github.com/user-attachments/assets/993717af-294f-4db5-9d84-348cc0f11ff6" />
 
 ### Шаг 1.3: Установка Ansible
 ```bash
@@ -44,6 +46,7 @@ source ~/.bashrc
 ```bash
 ansible --version
 ```
+<img width="974" height="498" alt="image" src="https://github.com/user-attachments/assets/04bb2e8c-ec89-4e3b-bb2c-341236a0cdea" />
 
 Ожидаемый вывод:
 ```
@@ -80,6 +83,7 @@ ls -la ~/.ssh/ansible_key*
 chmod 600 ~/.ssh/ansible_key
 chmod 644 ~/.ssh/ansible_key.pub
 ```
+<img width="974" height="665" alt="image" src="https://github.com/user-attachments/assets/b0a1f524-e57f-49aa-b229-5db9b95a412e" />
 
 ---
 
@@ -98,6 +102,7 @@ cd /path/to/project
 
 # Сборка образа
 docker-compose build
+<img width="974" height="163" alt="image" src="https://github.com/user-attachments/assets/7f4a5601-bed7-4767-9c9f-4886cf631ebd" />
 
 # Запуск контейнера в фоновом режиме
 docker-compose up -d
@@ -113,6 +118,7 @@ docker-compose ps
 NAME                    COMMAND               STATUS      PORTS
 ansible-managed-host    "/usr/sbin/sshd -D"   Up 1 min    0.0.0.0:2222->22/tcp
 ```
+<img width="974" height="163" alt="image" src="https://github.com/user-attachments/assets/c98ecf53-a50b-4966-a8a4-56a862b83226" />
 
 ### Шаг 3.5: Копирование публичного SSH ключа в контейнер
 ```bash
@@ -137,6 +143,7 @@ ssh -i ~/.ssh/ansible_key -p 2222 ansible@localhost
 ```
 
 Ожидаемый результат: вы должны попасть в bash контейнера без ввода пароля.
+<img width="974" height="671" alt="image" src="https://github.com/user-attachments/assets/7ad6f338-fff8-4425-92e8-58e3b1eb9888" />
 
 Выход из контейнера:
 ```bash
@@ -174,6 +181,7 @@ ansible_ssh_common_args=-o StrictHostKeyChecking=no
 ```bash
 ansible-inventory -i inventory.ini --list
 ```
+<img width="974" height="575" alt="image" src="https://github.com/user-attachments/assets/0a75eb90-9b65-405a-a21b-d7cb72f140e2" />
 
 Ожидаемый вывод (JSON формат):
 ```json
@@ -209,6 +217,7 @@ managed1 | SUCCESS => {
     "ping": "pong"
 }
 ```
+<img width="974" height="136" alt="image" src="https://github.com/user-attachments/assets/3f450442-3cfd-419f-9702-5fed307f2ab1" />
 
 ### Шаг 6.2: Сбор информации о системе (facts)
 ```bash
@@ -283,6 +292,7 @@ ok: [managed1] => {
 PLAY RECAP ************************************************************
 managed1 : ok=7 changed=4 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0
 ```
+<img width="974" height="563" alt="image" src="https://github.com/user-attachments/assets/86b9b233-64d4-4383-a393-8acb75498fb5" />
 
 ---
 
@@ -319,6 +329,7 @@ managed1 : ok=7 changed=4 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0
    ```bash
    ansible -i inventory.ini managed1 -m command -a "timedatectl set-timezone UTC"
    ```
+<img width="974" height="642" alt="image" src="https://github.com/user-attachments/assets/dab396a5-79ab-4812-9b20-31d6e7358c89" />
 
 **Ожидаемый результат:** вывод команд без ошибок
 
@@ -368,6 +379,7 @@ managed1 : ok=7 changed=4 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0
    ```bash
    ansible-playbook -i inventory.ini task3_files.yml
    ```
+<img width="974" height="552" alt="image" src="https://github.com/user-attachments/assets/d48f2de1-b951-42cc-9785-59e25924b2e1" />
 
 **Ожидаемый результат:** три директории с файлами, созданные на управляемом хосте
 
