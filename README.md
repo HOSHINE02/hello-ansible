@@ -46,7 +46,7 @@ source ~/.bashrc
 ```bash
 ansible --version
 ```
-<img width="974" height="498" alt="image" src="https://github.com/user-attachments/assets/04bb2e8c-ec89-4e3b-bb2c-341236a0cdea" />
+<img width="988" height="151" alt="image" src="https://github.com/user-attachments/assets/b4699555-2e29-420e-babe-9a1992089e88" />
 
 Ожидаемый вывод:
 ```
